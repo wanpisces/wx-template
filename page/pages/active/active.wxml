@@ -1,0 +1,8 @@
+<view class="page">
+  <view class='active-contain'>
+  <!-- openType为getUserInfo是获取用户信息，getPhoneNumber获取电话号码 -->
+    <authorizeView bind:onBut="authorBtn" openType="getUserInfo">
+      <view class='active-btn'>授权登陆</view>
+    </authorizeView>
+  </view>
+</view>

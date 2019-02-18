@@ -1,0 +1,18 @@
+<!--page/tabBar/index/index.wxml-->
+<import src="/my-template/load/listTemplate.wxml" />
+<!-- <template is='load' data="{{loadData}}" /> -->
+<view class='pages' style="height:{{windowHeight}}px;{{isViewPicker?'overflow: hidden;':''}}">
+  <!-- <navigationBar class='navigationBar' tag="{{1}}" is-back="{{false}}" img-url="{{bgUrl1}}" status-bar-height="{{statusBarHeight}}" /> -->
+  <view class='v2'>
+    <image mode='aspectFill' src='{{imgUrl?imgUrl:bgUrl2}}' class='bg' style='height:{{bgh}}rpx;'></image>
+  </view>
+  <view class='data_view' style='min-height:600rpx;' style="top:{{statusBarHeight+45}}px;">
+    <authorizeView user-info="{{true}}" refresh="{{refreshAuthorizeView}}" is-immediately-back="{{true}}" bind:onBut="{{user_avatar?'':'onUserAvatar'}}">
+      <image wx:if="{{user_avatar}}" mode='aspectFill' class='headPortrait' src="{{user_avatar}}"></image>
+      <view wx:else class='headPortrait'>
+        <open-data type="userAvatarUrl" class='headPortrait'></open-data>
+      </view>
+    </authorizeView>
+    <template is='loading' data="{{hidden:teamList}}"> </template>
+  </view>
+</view>

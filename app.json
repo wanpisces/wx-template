@@ -1,0 +1,51 @@
+{
+  "debug": true,
+  "pages": [
+    "page/pages/active/active",
+    "page/tabBar/index/index",
+    "page/tabBar/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor": "#ffd100",
+    "list": [
+      {
+        "pagePath": "page/tabBar/index/index",
+        "text": "首页",
+        "iconPath": "pic/home_sport_grey_icon.png",
+        "selectedIconPath": "pic/home_sport_icon.png"
+      },
+      {
+        "pagePath": "page/tabBar/mine/mine",
+        "text": "我的",
+        "iconPath": "pic/home_me_grey_icon.png",
+        "selectedIconPath": "pic/home_me_icon.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "page/pack-index",
+      "pages": [
+        "pages/team-page/team-page"
+      ]
+    },
+    {
+      "root": "page/pack-mine",
+      "pages": [
+        "mine-feedback/mine-feedback"
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "      "
+    }
+  }
+}

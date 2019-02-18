@@ -1,0 +1,10 @@
+<!--widget/authorize-view/authorize-view.wxml-->
+<form report-submit='true' bindsubmit='butSubmit'>
+  <button wx:if="{{openType =='getUserInfo'}}" class='bnt' bindgetuserinfo="getUserInfo" lang="zh_CN"  open-type="{{openType}}">
+    <slot></slot>
+  </button>
+  <button wx:if="{{openType =='getPhoneNumber'}}" class='bnt' bindgetuserinfo="getPhoneNumber" lang="zh_CN"  open-type="{{openType}}">
+    <slot></slot>
+  </button>
+</form>
+
