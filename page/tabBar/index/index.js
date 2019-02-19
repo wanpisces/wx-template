@@ -66,9 +66,6 @@ Page({
         isPhone: userInfo.user_phone && true || false,
         mineUserId: userInfo.user_id
       })
-      getIndex()
-      getAttrList()
-      hotSearch()
     })
     wx.getSystemInfo({
       success: function (res) {
@@ -87,7 +84,7 @@ Page({
   onReady: function () {
 
   },
-
+ 
   /**
    * 生命周期函数--监听页面显示
    */
@@ -135,66 +132,6 @@ Page({
 
     }, msg)
   },
-  // 查看更多（队伍广场）
-  checkMoreTeam: function () {
-    toolUtils.pageTo('/page/pack-find/find-team/find-team', 1)
-  },
-  /**
-   * 评论
-   */
-  onComment: function (e) {
-    var that = this
-    var client = e.changedTouches[0]
-    var socrollY = client.pageY - windowHeight + 90
-    var item = e.currentTarget.dataset.item
-    var index = e.currentTarget.dataset.index
-    console.log(e)
-    if (socrollY > 0) {
-      wx.pageScrollTo({
-        scrollTop: socrollY,
-        duration: 150
-      })
-    }
-    setTimeout(function () {
-      var params = {
-        'branch_id': item.feed_id,
-        'branch_type': 2,
-        'level': 1
-      }
-      that.setData({
-        isCommentShow: false,
-        params: JSON.stringify(params)
-      })
-    }, 300)
-  },
-  onLongTag: function (e) {
-    var item = e.currentTarget.dataset.item
-    var index = e.currentTarget.dataset.index
-    wx.showModal({
-      title: '提示',
-      content: '是否删除当前动态？',
-      success: function (res) {
-        if (res.confirm) {
-          var params = {
-            feed_id: item.feed_id
-          }
-          httpsUtils.deleteFeed(params, function (res) {
-            var fl = that.data.feedList
-            fl.splice(index, 1)
-            that.setData({
-              feedList: fl
-            })
-            toolUtils.showToast("删除成功")
-          }, function (e) {
-            toolUtils.showToast(e.data.msg)
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-
-  },
   //找队伍
   findTeamEvt: function () {
     toolUtils.pageTo('/page/pack-find/find-team/find-team', 1)
@@ -209,7 +146,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    console.log(res)
     if (res.from === 'button') {
       // 来自页面内转发按钮
       var item = res.target.dataset.item
@@ -225,15 +161,8 @@ Page({
       }
     }
   },
-  /**
-   * 获取分类数据
-   */
-  onGetAttr: function (e) {
-    getAttrList("加载中...")
-  },
   //点击头像授权
   onUserAvatar: function (e) {
-    console.log(e)
     var userInfo = e.detail.userInfo
     that.setData({
       user_avatar: userInfo.user_avatar,

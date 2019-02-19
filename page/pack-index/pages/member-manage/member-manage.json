@@ -1,7 +1,0 @@
-{
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "navigationBar": "/widget/navigationBar/navigationBar",
-    "loadingView": "/widget/loading-view/loading-view"
-  }
-}

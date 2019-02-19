@@ -1,6 +1,8 @@
 <!--page/tabBar/index/index.wxml-->
-<import src="/my-template/load/listTemplate.wxml" />
-<!-- <template is='load' data="{{loadData}}" /> -->
+
+<navigator url='/page/pages/load/load'> 
+<button type="primary">加载页</button></navigator>
+
 <view class='pages' style="height:{{windowHeight}}px;{{isViewPicker?'overflow: hidden;':''}}">
   <!-- <navigationBar class='navigationBar' tag="{{1}}" is-back="{{false}}" img-url="{{bgUrl1}}" status-bar-height="{{statusBarHeight}}" /> -->
   <view class='v2'>
@@ -13,6 +15,5 @@
         <open-data type="userAvatarUrl" class='headPortrait'></open-data>
       </view>
     </authorizeView>
-    <template is='loading' data="{{hidden:teamList}}"> </template>
   </view>
 </view>

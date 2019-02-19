@@ -13,16 +13,14 @@ Page({
    */
   onLoad: function (options) {
     if (wx.getStorageSync('userInfo')) {
-      console.log('本地')
       wx.switchTab({
-        url: '/page/tabBar/about-movement/about-movement',
+        url: '/page/tabBar/index/index',
       })
     } else {
       console.log('请求')
       getApp().getToken(function (token) {
-        
         wx.switchTab({
-          url: '/page/tabBar/about-movement/about-movement',
+          url: '/page/tabBar/index/index',
         })
       })
     }

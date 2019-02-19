@@ -34,7 +34,7 @@ Page({
     getApp().getRefreshUserInfo(function (userInfo) {
       if (userInfo) {
         wx.switchTab({
-          url: '/page/tabBar/about-movement/about-movement',
+          url: '/page/tabBar/index/index',
         })
       }
     })

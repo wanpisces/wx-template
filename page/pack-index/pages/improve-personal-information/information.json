@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-      "navigationBar": "/widget/navigationBar/navigationBar",
-      "authorizeView": "/widget/authorize-view/authorize-view"
-    }
-}

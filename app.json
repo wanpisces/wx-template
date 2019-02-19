@@ -3,14 +3,15 @@
   "pages": [
     "page/pages/active/active",
     "page/tabBar/index/index",
-    "page/tabBar/mine/mine"
+    "page/tabBar/mine/mine",
+    "page/pages/load-page/load-page",
+    "page/pages/load/load"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
     "selectedColor": "#ffd100",
